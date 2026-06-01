@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Michael Jackson Songs & Albums</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: gold;
+            text-align: center;
+        }
+
+        .album {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            background-color: #111;
+        }
+
+        h2 {
+            color: cyan;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Michael Jackson Albums & Songs</h1>
+
+<div id="music"></div>
+
+<script>
+
+const albums = [
+{
+    album: "Off the Wall (1979)",
+    songs: [
+        "Don't Stop 'Til You Get Enough",
+        "Rock With You",
+        "Off the Wall",
+        "She's Out of My Life"
+    ]
+},
+
+{
+    album: "Thriller (1982)",
+    songs: [
+        "Thriller",
+        "Billie Jean",
+        "Beat It",
+        "Human Nature",
+        "Wanna Be Startin' Somethin'"
+    ]
+},
+
+{
+    album: "Bad (1987)",
+    songs: [
+        "Bad",
+        "Smooth Criminal",
+        "Dirty Diana",
+        "Man in the Mirror",
+        "The Way You Make Me Feel"
+    ]
+},
+
+{
+    album: "Dangerous (1991)",
+    songs: [
+        "Black or White",
+        "Remember the Time",
+        "Jam",
+        "Heal the World",
+        "Who Is It"
+    ]
+},
+
+{
+    album: "HIStory (1995)",
+    songs: [
+        "They Don't Care About Us",
+        "Earth Song",
+        "Scream",
+        "Stranger in Moscow",
+        "You Are Not Alone"
+    ]
+},
+
+{
+    album: "Invincible (2001)",
+    songs: [
+        "You Rock My World",
+        "Butterflies",
+        "Cry",
+        "Unbreakable",
+        "Heaven Can Wait"
+    ]
+}
+
+];
+
+const container = document.getElementById("music");
+
+albums.forEach(item => {
+
+    let albumDiv = document.createElement("div");
+    albumDiv.className = "album";
+
+    let title = document.createElement("h2");
+    title.textContent = item.album;
+
+    let songList = document.createElement("ul");
+
+    item.songs.forEach(song => {
+        let li = document.createElement("li");
+        li.textContent = song;
+        songList.appendChild(li);
+    });
+
+    albumDiv.appendChild(title);
+    albumDiv.appendChild(songList);
+
+    container.appendChild(albumDiv);
+
+});
+
+</script>
+
+</body>
+</html>
